@@ -1,0 +1,8 @@
+---
+k3s_version: v1.25.2+k3s1
+ansible_user: root
+master_ip: "{{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0]) }}"
+tls_san:
+cluster_token: 
+extra_server_args: ""
+extra_agent_args: ""

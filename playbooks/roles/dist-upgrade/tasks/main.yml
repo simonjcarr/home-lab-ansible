@@ -1,0 +1,14 @@
+- name: update
+  become: true
+  apt:
+    name: "*"
+    state: latest
+- name: upgrade packages
+  become: true
+  apt:
+    upgrade: full
+
+- name: update the os
+  become: true
+  apt:
+    upgrade: dist
