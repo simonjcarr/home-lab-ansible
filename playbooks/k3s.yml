@@ -1,0 +1,20 @@
+---
+  - hosts: all
+    roles:
+      - role: prereqs
+  - hosts: first_master
+    gather_facts: yes
+    roles:
+      - role: first_master
+  - hosts: other_masters
+    roles:
+      - role: other_masters
+  - hosts: agents
+    roles:
+      - role: agents
+  - hosts: nginx
+    roles:
+      - role: nginx
+  # - hosts: other_masters
+  #   roles:
+  #     - role: other_masters

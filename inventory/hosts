@@ -1,0 +1,17 @@
+master_1 ansible_host=135.181.255.55
+master_2 ansible_host=95.217.157.96
+master_3 ansible_host=65.108.145.200
+agent_1 ansible_host=95.217.1.11
+lb ansible_host=65.21.61.107
+[first_master]
+master_1 
+
+[other_masters]
+master_1 
+master_3 
+
+[agents]
+agent_1
+
+[nginx]
+lb

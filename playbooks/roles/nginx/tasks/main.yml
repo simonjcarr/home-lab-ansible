@@ -1,0 +1,18 @@
+- name: "Install Nginx"
+  become: true
+  apt:
+    name: "nginx"
+    state: "latest"
+- name: "Copy conf file"
+  become: true
+  copy:
+    src: k3s.conf
+    dest: /etc/nginx/conf.d
+    owner: root
+    group: root
+- name: "start the nginx service"
+  become: true
+  service:
+    name: "nginx"
+    state: "started"
+    enabled: true

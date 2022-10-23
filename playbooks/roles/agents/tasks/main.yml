@@ -1,0 +1,4 @@
+- name: Install k3s on agents
+  become: true
+  shell:
+    cmd: curl -sfL https://get.k3s.io | K3S_TOKEN="{{ cluster_token }}" K3S_URL="https://135.181.255.55:6443" sh -
